@@ -4,13 +4,13 @@ Contains the python script for determining conservation level of a binding site
 #####		                 	CONSURF CONVERTER		                   	#####
 #####								                                                   #####
 #####################################################################
-### First use the converter script on your input data -- follow the steps before running
-### Save the ""results summary"" from consurf in normal text format
-### Open the file in a text editor and cmd+f to replace a goofiness replace ", " with "," -- note the space
-### The first line for the input for the converter script should be the pos	seq	3latom ....
-### Remove the second line in the file that only contains "(normalized)" -- you can change the "score" title to scoren if you like
-### Delete any spaces from the title names
-### First two lines should look something like this:
+1. First use the converter script on your input data -- follow the steps before running
+2. Save the ""results summary"" from consurf in normal text format
+3. Open the file in a text editor and cmd+f to replace a goofiness replace ", " with "," -- note the space
+4. The first line for the input for the converter script should be the pos	seq	3latom ....
+5. Remove the second line in the file that only contains "(normalized)" -- you can change the "score" title to scoren if you like
+6. Delete any spaces from the title names
+7. First two lines should look something like this:
  POS	 SEQ	    3LATOM	SCOREN		COLOR	CONFIDENCEINTERVAL	CONFIDENCEINTERVALCOLORS	MSADATA		RESIDUEVARIETY
    1	   P	 PRO1000:A	 1.452		  1	 0.211,3.276			    4,1			   7/300	P,K,A,I,C,L
 ### THE THREE LINES OF JUNK AT THE END OF THE FILE SHOULD NOT BE INCLUDED IN THE TEXT FILE -- ONLY DATA!
