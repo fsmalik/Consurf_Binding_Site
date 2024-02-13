@@ -1,33 +1,33 @@
 # Consurf_Binding_Site
 Contains the python script for determining conservation level of a binding site
 #####################################################################
-#####			CONSURF CONVERTER			#####
-#####								#####
+#####		                 	CONSURF CONVERTER		                   	#####
+#####								                                                   #####
 #####################################################################
-### FIRST USE THE CONVERTER SCRIPT ON YOUR INPUT DATA -- FOLLOW THE STEPS BEFORE RUNNING
-### SAVE THE ""RESULTS SUMMARY"" FROM CONSURF IN NORMAL TEXT FORMAT
-### OPEN THE FILE IN A TEXT EDITOR AND CMD+F TO REPLACE A GOOFINESS REPLACE ", " with "," -- NOTE THE SPACE
-### THE FIRST LINE FOR THE INPUT FOR THE CONVERTER SCRIPT SHOULD BE THE POS	SEQ	3LATOM ....
-### REMOVE THE SECOND LINE IN THE FILE THAT ONLY CONTAINS "(normalized)" -- YOU CAN CHANGE THE "SCORE" TITLE TO SCOREN IF YOU LIKE
-### DELETE ANY SPACES FROM THE TITLE NAMES
-### FIRST TWO LINES SHOULD LOOK SOMETHING LIKE THIS:
+### First use the converter script on your input data -- follow the steps before running
+### Save the ""results summary"" from consurf in normal text format
+### Open the file in a text editor and cmd+f to replace a goofiness replace ", " with "," -- note the space
+### The first line for the input for the converter script should be the pos	seq	3latom ....
+### Remove the second line in the file that only contains "(normalized)" -- you can change the "score" title to scoren if you like
+### Delete any spaces from the title names
+### First two lines should look something like this:
  POS	 SEQ	    3LATOM	SCOREN		COLOR	CONFIDENCEINTERVAL	CONFIDENCEINTERVALCOLORS	MSADATA		RESIDUEVARIETY
    1	   P	 PRO1000:A	 1.452		  1	 0.211,3.276			    4,1			   7/300	P,K,A,I,C,L
 ### THE THREE LINES OF JUNK AT THE END OF THE FILE SHOULD NOT BE INCLUDED IN THE TEXT FILE -- ONLY DATA!
 ### SO ... DELETE THESE LINES:
 "*Below the confidence cut-off - The calculations for this site were performed on less than 6 non-gaped homologue sequences,"
 "or the confidence interval for the estimated score is equal to- or larger than- 4 color grades."
-### TO RUN THE CONVERTER: ./consurf_converter.sh [input file]
-### AFTER YOU RUN THE CONVERTER THE CONVERTER PUT SOME DOUBLE QUOTES IN THE COLUMN TITLES -- GET RID OF THEM.
+### To run the converter: ./consurf_converter.sh [input file]
+### After you running the converter, the converter put some double quotes in the column titles -- GET RID OF THEM.
 
 
 
 
 #####################################################################
-#####                   PYTHON CONSURF	                        #####
+#####                   PYTHON CONSURF	                         #####
 #####                       SCORER                              #####
 #####################################################################
-### SAMPLE CONFSURF INPUT FORMAT FOR PYTHON ###
+### Sample confsurf input format for python ###
 
 POS,SEQ,3LATOM,SCORE(normalized),COLOR,CONFIDENCEINTERVAL,CONFIDENCEINTERVALCOLORS,MSADATA,RESIDUEVARIETY
 1,"P","PRO1000:A","1.452","1","0.211,3.276","4,1","7/300","P,K,A,I,C,L"
@@ -40,9 +40,9 @@ POS,SEQ,3LATOM,SCORE(normalized),COLOR,CONFIDENCEINTERVAL,CONFIDENCEINTERVALCOLO
 8,"W","TRP1007:A","-0.376",6*,"-1.052,0.053","8,5","5/300","W,R,L"
 9,"E","GLU1008:A","-0.584",7*,"-1.114,-0.326","8,6","5/300","E,D,N"
 
-### THE SITEMAP SITES SHOULD BE ORDER IN ASCENDING ORDER -- i.e. SITE1 FIRST SITE5 LAST
-### SCRIPT DOESN'T WORK IF THERE ARE LESS THAN 5 SITES IN THE SITEMAP INPUT FILE
-### THE SCRIPT IS WRITTEN ASSUME THE SITES ARE IN CHAIN A; THEREFORE THE SITEMAP INPUT FILE SHOULD LOOK EXACTLY LIKE THIS:
+### The sitemap sites should be order in ascending order -- i.e. site1 first site5 last
+### Script doesn't work if there are less than 5 sites in the sitemap input file
+### The script is written assume the sites are in chain a; therefore the sitemap input file should look exactly like this:
 
 Chain A: 2,3,4,5,6,7,8,9,10,11,12,26,29,33,81,84,85,88,89,90,91,102,105,106,109,110,113,156,159,160,164,175,176,177,178,179,180,181,183,187,190,191,193,194,197,198,200,201,202,204,205,209,210,250,254,257,258,260,261,262,264,265,268,271,272,274,275,276,278,280,281,282,284,285,286,288,289,292
 Chain A: 60,63,64,119,122,123,126,127,137,221,224,228,235,236,237,238,239,240,242,243,246,301,302,303,305,306,307,308,309
