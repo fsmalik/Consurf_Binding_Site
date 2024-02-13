@@ -17,8 +17,8 @@ Contains the python script for determining conservation level of a binding site
 ### SO ... DELETE THESE LINES:
 "*Below the confidence cut-off - The calculations for this site were performed on less than 6 non-gaped homologue sequences,"
 "or the confidence interval for the estimated score is equal to- or larger than- 4 color grades."
-### To run the converter: ./consurf_converter.sh [input file]
-### After you running the converter, the converter put some double quotes in the column titles -- GET RID OF THEM.
+To run the converter: ./consurf_converter.sh [input file]
+8. After you running the converter, the converter put some double quotes in the column titles -- GET RID OF THEM.
 
 
 
