@@ -2,10 +2,7 @@
 Contains the python script for determining conservation level of a binding site
 
 
-#####################################################################
-#####		                 	CONSURF CONVERTER		                   	#####
-#####								                                                   #####
-#####################################################################
+## Consurf Converter
 
 1. First use the converter script on your input data -- follow the steps before running
 2. Save the ""results summary"" from consurf in normal text format
@@ -33,10 +30,7 @@ The ```[input file]``` is the consurf summary downloaded from consurf database a
 
 
 
-#####################################################################
-#####                   PYTHON CONSURF	                         #####
-#####                       SCORER                              #####
-#####################################################################
+## Python Consurf Site Scorer
 
 Sample ```[confsurf_input_file]``` format for python
 ```
