@@ -5,17 +5,17 @@ Contains the python script for determining conservation level of a binding site
 ## Consurf Converter
 
 1. First use the converter script on your input data -- follow the steps before running
-2. Save the ""results summary"" from consurf in normal text format
-3. Open the file in a text editor and cmd+f to replace a goofiness replace ", " with "," -- note the space
-4. The first line for the input for the converter script should be the pos	seq	3latom ....
-5. Remove the second line in the file that only contains "(normalized)" -- you can change the "score" title to scoren if you like
-6. Delete any spaces from the title names
+2. Save the "results summary" from consurf in normal text format
+3. Open the file in a text editor and cmd+f to replace a goof. Replace ", " with "," -- note the space
+4. The first line for the input for the converter script should be the line that starts with ```pos	seq	3latom ....```
+5. Remove the second line in the file that only contains "(normalized)" -- you can change the "score" title to "scoren" if you like
+6. Remove spaces from the title names
 7. First two lines should look something like this:
 ```
  POS	 SEQ	    3LATOM	SCOREN		COLOR	CONFIDENCEINTERVAL	CONFIDENCEINTERVALCOLORS	MSADATA		RESIDUEVARIETY
    1	   P	 PRO1000:A	 1.452		  1	 0.211,3.276			    4,1			   7/300	P,K,A,I,C,L
    ```
-THE THREE LINES OF JUNK AT THE END OF THE FILE SHOULD NOT BE INCLUDED IN THE TEXT FILE -- ONLY DATA!
+THE THREE LINES OF EXTRA TEXT AT THE END OF THE FILE SHOULD NOT BE INCLUDED IN THE TEXT FILE -- ONLY DATA...
 SO ... DELETE THESE LINES:
 ```
 "*Below the confidence cut-off - The calculations for this site were performed on less than 6 non-gaped homologue sequences,"
@@ -23,7 +23,7 @@ SO ... DELETE THESE LINES:
 ```
 
 To run the converter: ```./consurf_converter.sh [input file]```.
-The ```[input file]``` is the consurf summary downloaded from consurf database a sample is included here. 
+The ```[input file]``` is the consurf summary downloaded from consurf database. A sample is included here. 
 
 8. After you running the converter, the converter put some double quotes in the column titles -- GET RID OF THEM.
 
@@ -48,7 +48,7 @@ POS,SEQ,3LATOM,SCORE(normalized),COLOR,CONFIDENCEINTERVAL,CONFIDENCEINTERVALCOLO
 
 The sitemap sites should be order in ascending order -- i.e. site1 first site5 last
 Script doesn't work if there are less than 5 sites in the sitemap input file
-The script is written assume the sites are in chain a; therefore the ```[sitemap_input_file]``` should look exactly like this:
+The script is written to assume the sites are in chain a; therefore the ```[sitemap_input_file]``` should look exactly like this; take note of the Chain identity, the numbers used here are random:
 ```
 Chain A: 2,3,4,5,6,7,8,9,10,11,12,26,29,33,81,84,85,88,89,90,91,102,105,106,109,110,113,156,159,160,164,175,176,177,178,179,180,181,183,187,190,191,193,194,197,198,200,201,202,204,205,209,210,250,254,257,258,260,261,262,264,265,268,271,272,274,275,276,278,280,281,282,284,285,286,288,289,292
 Chain A: 60,63,64,119,122,123,126,127,137,221,224,228,235,236,237,238,239,240,242,243,246,301,302,303,305,306,307,308,309
